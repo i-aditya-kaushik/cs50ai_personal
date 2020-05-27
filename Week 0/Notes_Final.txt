@@ -1,0 +1,64 @@
+C1. Search Algo
+	i) Agent: entity that perceives its env and acts upon that env
+	ii) State: Config 
+	*iii) Initial State: Starting Point
+	*iv) Actions: Choices that can be made in a state
+	v) actions(s) returns the set of actions that can be done
+	*vi) Transition Model: Result(s,a) returns the state resulting from perf
+	    action a(sliding) in state s(the grid)
+	vii) State Space: Set of all states reachable from the initial state by
+	     any sequence of actions
+	*viii) Goal Test: Check if the given state is the goal state
+	*ix)   Path cost: numerical cost associated with a given path
+	x)    Solution vs Optimal Solution
+
+2. Implementation of Search Algo:
+	i. Node: A data structure that keeps track of: state, parent, action and 
+	   path cost
+	ii. Frontier: Contains the ini state
+	    Repeat: If frontier is empty, then no solution
+	    Remove node from frontier, if node contains goal state return the sol
+	    Expand node
+3. Problem with Search: Can make an infinite loop
+4. Revised Approach: Frontier: Contains the ini state
+	    Start with an empty explored set
+	    Repeat: If frontier is empty, then no solution
+	    Remove node from frontier, if node contains goal state return the sol
+	    Add the node to the explored set
+	    Expand node, add resulting nodes to the frontier if they arent already
+	    in the frontier or the explored set
+5. Stack For Implementation
+	DFS(Depth First Search)
+6. Queue for Implementation
+	BFS(Breadth First Search)
+7. Uninformed Search- DFS BFS are egs:
+	
+8.1 Informed Search:
+Greedy Best first Search: heuristic function: In case of Grid, Manhattan distance
+8.2 A* Search: search algo which expands node with lowest value of g(n)[cost func]
+ + h(n)[heuristic]
+9. A* is opmital given:
+	i) h(n) is admissible(never overestimates the cost)
+	ii) h(n) is consistent(for every node n and successor n' with step cost)
+10. Adversarial Search: Tic Tac toe
+	i. Mini Max: 
+		function MAX(state):
+			if Terminal(state):
+				return Utility(state)
+			v= -infinity
+			for action in Actions(state):
+				v = max(v,Min-value(Result(state,action)))
+			return v
+		function MIN(state):
+			if Terminal(state):
+				return Utility(state)
+			v= infinity
+			for action in Actions(state):
+				v = min(v,Max-value(Result(state,action)))
+			return v
+	ii. Use Alpha Beta Pruning to optimize your solution
+	iii. Depth Limited Minimax
+	iv. Evaluation Function
+8. 
+ 
+
