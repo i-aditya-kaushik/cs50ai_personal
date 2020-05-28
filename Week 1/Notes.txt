@@ -1,0 +1,105 @@
+Knowledge Based Agents:
+    Concepts of TOC and Discrete Mathematics
+    For the computers to understand and embed logic using AI, we use Propositional logic
+    P Q R used as Proposition symbols 
+    ¬ , ^ , v , ->, <-> 
+
+    Not:
+        P   ¬P
+        T    F 
+        F    T 
+
+    And:
+        P   Q   p ^ q  
+        T   T    T 
+        T   F    F 
+        F   T    F 
+        F   F    F 
+
+    OR:
+        P   Q   p V q  
+        T   T    T 
+        T   F    T 
+        F   T    T 
+        F   F    F     
+    
+    Implies: If P is true, then q is true.. Case 2, since we had P as true but the implication is false, we say that the statement is false
+
+        P   Q   p -> q  
+        T   T    T 
+        T   F    F 
+        F   T    T 
+        F   F    T 
+
+    Biconditional
+
+        P   Q   p <-> q  
+        T   T    T 
+        T   F    F 
+        F   T    F 
+        F   F    T     
+
+    Knowledge Base:
+        Alpha entails Beta:
+        In every model if Alpha is true then Beta is also true
+        Inference: 
+        The process of deriving new sentences using old ones
+
+    For eg:
+        P: It is Tuesday 
+        Q: It is raining
+        R: Harry will go for a run
+
+    Knowledge Base(KB): (P^ ¬ Q) -> R     P     ¬Q    
+    Inference: R 
+
+    Does KB entails Alpha 
+
+    In order to answer the above Question, we use 
+    Model Checking: We have to enumerate all possible models 
+
+    Knowledge Engg:
+        Use Logical symbols to arrive at an Inference
+    Logic Puzzles:
+        Drawing conclusions by defining the KB
+    
+    Model Checking is not efficient.. It makes all the possible models and checks for each variable and seeks if it is true in all the 
+    universes
+
+    Inference Rules:
+        Premise - Conclusion 
+        Modus Ponens: Alpha -> Beta ^ Alpha Then Beta
+        And Elimination: Alpha ^ Beta Then Alpha
+        Double Negation Elimination: ¬(¬Alpha) Then Alpha
+        implication Elimination: Alpha -> Beta = ¬Alpha V Beta
+        Biconditional Elimination: Alpha <-> Beta Then (Alpha->Beta) ^ (Beta->Alpha)
+        De Morgan's Law: ¬(Alpha ^ Beta) = ¬Alpha V ¬Beta
+        De Morgan's Law: ¬(Alpha V Beta) = ¬Alpha ^ ¬Beta
+        Distributive Law: Alpha ^ (Beta V Gamma) = (Alpha ^ Beta) V (Alpha ^ Gamma)
+    Additional Rules:
+        (P V Q) ^  ¬ Q -> P 
+        (P V Q) ^ (¬P V R) -> Q V R 
+        Disjuction: OR 
+        Conjunction: AND 
+        CNF or CDNF
+        (P V Q) -> R 
+        ~(P V Q) V R 
+        (~P ^ ~Q) V R 
+        (~P V R) ^ (~Q V R)
+    Inference of Resolution:
+         To determine if KB entails Alpha:
+            KB ^ ~ Alpha is a contradiction.. To prove this we use this Elimination technique is CS to prove this
+        For eg: (A V B) ^ (~B V C) ^ (~C) entail A?
+
+        (A V B) ^ (~B V C) ^ (~C) ^ (~A) should be () then we can conclusively say that it entails A
+    First Order Logic: Better way to express common ideas 
+        Person(Minerva) : Minerva is a Person
+        House(Ravenclaw) : Ravenclaw is a House
+        ~House(Minerva) : Minerva is not a House
+        BelongsTo(Minerva,Griffindor) : Minerva BelongsTo Griffindor
+
+        With Universal Quantification: For all symbol
+        Existential Quantification: True for atleast one variable
+        
+
+    
